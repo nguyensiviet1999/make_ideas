@@ -29,5 +29,9 @@ return [
         'secret' => env('AWS_SECRET_ACCESS_KEY'),
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
-
+    'google' => [
+        'client_id' => '427223962616-fvlirp1gqll2e33jtub0hbd543qi4m1v.apps.googleusercontent.com',
+        'client_secret' => 'YXAQrrgMKg6gdXzXPs9aq1Ku',
+        'redirect' => 'http://localhost/make_ideas/public/auth/google/callback/',
+      ],
 ];
