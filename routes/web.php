@@ -32,6 +32,9 @@ Route::get('logout', 'Auth\AuthController@logout');
 
 Route::get('/auth/{provider}', 'Auth\SocialAuthController@redirectToProvider');
 Route::get('/auth/{provide}/callback', 'Auth\SocialAuthController@handleProviderCallback');
+Route::get('/category/{id_category}', 'Auth\AuthController@home');
+Route::get('create-post', 'Frontend\PostsController@showCreatePost');
+
 // Route::get('/', function () {
 //
 //     $petani = DB::table('categories')->get();

@@ -9,9 +9,14 @@ Use App\Models\Category;
 
 class HomepageController extends Controller
 {
-  public function index(){
+  public function index($id_category=0){
+    if ($id_category) {
+      $posts = DB::table('posts')->where('category_id',$id_category)->get();
+    }
+    else {
+      $posts = DB::table('posts')->get();
+    }
     $category = DB::table('categories')->get();
-    
-    return view('frontend.homepage', ['category' => $category]);
+    return view('frontend.homepage', ['category' => $category, 'post' => $posts]);
   }
 }
