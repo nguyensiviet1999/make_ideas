@@ -79,11 +79,11 @@ $config['backends']['laravel_logs'] = array(
 
 // Backends
 
-$config['backends']['default'] = array(
+$config['backends'][''] = array(
     'name'         => 'default',
     'adapter'      => 'local',
     'baseUrl'      => config('app.url').'/userfiles/',
-    'root'         => public_path('/userfiles/'),
+    // 'root'         => public_path('/userfiles/'),
     'chmodFiles'   => 0777,
     'chmodFolders' => 0755,
     'filesystemEncoding' => 'UTF-8'

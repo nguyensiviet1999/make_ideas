@@ -33,8 +33,11 @@ Route::get('logout', 'Auth\AuthController@logout');
 Route::get('/auth/{provider}', 'Auth\SocialAuthController@redirectToProvider');
 Route::get('/auth/{provide}/callback', 'Auth\SocialAuthController@handleProviderCallback');
 Route::get('/category/{id_category}', 'Auth\AuthController@home');
-Route::get('create-post', 'Frontend\PostsController@showCreatePost');
+Route::get('create-articles', 'Frontend\ArticlesController@showCreateArticles');
 
+Route::post('post-articles','Frontend\ArticlesController@createArticles');
+Route::post('ckeditor/upload', 'CkeditorController@upload')->name('ckeditor.upload');
+Route::get('ckeditor', 'CkeditorController@index');
 // Route::get('/', function () {
 //
 //     $petani = DB::table('categories')->get();

@@ -4,7 +4,6 @@
     @foreach($category ?? '' as $key => $data)
       <li class="m-l-200">
         <a class="nav-link btn" href="#">{{$data->name}}</a>
-        {{var_dump($data)}}
       </li>
 		@endforeach
     
