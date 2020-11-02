@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 Use App\Models\Post;
 use Illuminate\Support\Facades\Auth;
 use Validator,Redirect,Response;
+use App\Models\Like;
 
 class ArticlesController extends Controller
 {
@@ -36,5 +37,26 @@ class ArticlesController extends Controller
             'user_id' => Auth::id()
         ]);
         return Redirect::to("/")->withSuccess('You create articles success!');
+    }
+    public function countLike($post_id)
+    {
+        return count(DB::table('likes')->where('post_id',$post_id)->get());
+    }
+    public function like($post_id)
+    {
+        Like::create(['user_id'=>Auth::id(), 'post_id' => $post_id]);
+        return count(DB::table('likes')->where('post_id',$post_id)->get());
+        
+    }
+    public function unLike($post_id)
+    {
+        DB::table('likes')->where(['post_id'=>$post_id,'user_id'=>Auth::id()])->delete();
+        return count(DB::table('likes')->where('post_id',$post_id)->get());
+    }
+    public function statusLike($post_id)
+    {
+        if(count(DB::table('likes')->where(['post_id'=>$post_id,'user_id'=>Auth::id()])->get()) >= 1){
+            return 'liked';
+        }
     }
 }

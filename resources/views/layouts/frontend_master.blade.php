@@ -13,6 +13,10 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 <!-- Main CSS -->
 <link href={{asset('assets/css/main.css')}} rel="stylesheet"/>
+<script src={{asset('assets/js/vendor/jquery.min.js')}} type="text/javascript"></script>
+<script src={{asset('assets/js/vendor/popper.min.js')}} type="text/javascript"></script>
+<script src={{asset('assets/js/vendor/bootstrap.min.js')}} type="text/javascript"></script>
+<script src={{asset('assets/js/functions.js')}} type="text/javascript"></script>
 </head>
 
 <body>
@@ -20,9 +24,6 @@
 <!--------------------------------------
 JAVASCRIPTS
 --------------------------------------->
-<script src={{asset('assets/js/vendor/jquery.min.js')}} type="text/javascript"></script>
-<script src={{asset('assets/js/vendor/popper.min.js')}} type="text/javascript"></script>
-<script src={{asset('assets/js/vendor/bootstrap.min.js')}} type="text/javascript"></script>
-<script src={{asset('assets/js/functions.js')}} type="text/javascript"></script>
+
 </body>
 </html>

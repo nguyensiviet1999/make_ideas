@@ -38,6 +38,11 @@ Route::get('create-articles', 'Frontend\ArticlesController@showCreateArticles');
 Route::post('post-articles','Frontend\ArticlesController@createArticles');
 Route::post('ckeditor/upload', 'CkeditorController@upload')->name('ckeditor.upload');
 Route::get('ckeditor', 'CkeditorController@index');
+Route::get('like/{post_id}', 'Frontend\ArticlesController@like');
+Route::get('unlike/{post_id}', 'Frontend\ArticlesController@unLike');
+Route::get('count-like/{post_id}', 'Frontend\ArticlesController@countLike');
+Route::get('get-status-like/{post_id}', 'Frontend\ArticlesController@statusLike');
+
 // Route::get('/', function () {
 //
 //     $petani = DB::table('categories')->get();
